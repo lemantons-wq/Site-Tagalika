@@ -11,6 +11,7 @@
 | Телефон, e-mail, WhatsApp, реквизиты (общие для обоих языков) | `content/company.json` |
 | Цвета и оформление | `static/assets/css/style.css` |
 | Картинки продукции | `static/assets/img/` |
+| Логотип-надпись (контур шрифта Big Shoulders Stencil) | `static/assets/img/wordmark.svg`, генератор `tools/make_wordmark.py` |
 
 - В `company.json`: название, рег. номер, VAT, e-mail и адрес (`address` — список строк, пока пустой). Поля `phone` и `whatsapp` сейчас пустые (`""`), поэтому телефона и WhatsApp на сайте нет. Если вписать номер, кнопки и карточки появятся сами.
 - В текстах можно подставлять поля из `company.json`: `{{legalName}}`, `{{email}}`, `{{brand}}`.
