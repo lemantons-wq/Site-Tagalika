@@ -43,14 +43,28 @@ const url = {
   privacy: (l) => `${base(l)}/privacy/`,
 };
 const digits = (s) => s.replace(/[^\d]/g, '');
-const tel = `tel:+${digits(company.phone)}`;
-const wa = (text) => `https://wa.me/${digits(company.whatsapp)}${text ? `?text=${encodeURIComponent(text)}` : ''}`;
-const mail = (subject) => `mailto:${company.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
+// Phone and WhatsApp are optional: leave them empty ("") in company.json and they disappear from the site.
+const hasPhone = Boolean(company.phone);
+const hasWa = Boolean(company.whatsapp);
+const tel = hasPhone ? `tel:+${digits(company.phone)}` : '';
+const wa = (text) => `https://wa.me/${digits(company.whatsapp || '')}${text ? `?text=${encodeURIComponent(text)}` : ''}`;
+const mail = (subject, body) => {
+  const q = [subject && `subject=${encodeURIComponent(subject)}`, body && `body=${encodeURIComponent(body)}`].filter(Boolean).join('&');
+  return `mailto:${company.email}${q ? `?${q}` : ''}`;
+};
+
+// Company details as [label key, html value], skipping empty fields
+const detailRows = () => [
+  ['address', (company.address || []).map(esc).join('<br>')],
+  ['regNo', esc(company.regNo || '')],
+  ['vatEu', esc(company.vatEu || '')],
+].filter(([, v]) => v);
 
 const icon = {
   phone: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>',
   mail: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.4l8 5 8-5V7H4zm16 2.75-7.47 4.67a1 1 0 0 1-1.06 0L4 9.75V17h16V9.75z"/></svg>',
   chat: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.27a.6.6 0 0 0 .74.74L7.05 20.7A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.25 14.78.9.9 0 0 0-.72-.1l-2.5.76.76-2.5a.9.9 0 0 0-.1-.72A8 8 0 0 1 12 4zm-3.2 4.3c-.25 0-.6.1-.9.45-.3.33-1.2 1.17-1.2 2.85s1.23 3.3 1.4 3.53c.17.23 2.4 3.67 5.83 5.15 2.86 1.13 3.44.9 4.06.85.62-.06 2-.82 2.28-1.6.28-.8.28-1.47.2-1.6-.09-.15-.31-.23-.65-.4-.34-.17-2-.99-2.3-1.1-.31-.12-.54-.17-.76.17-.23.34-.87 1.1-1.07 1.32-.2.23-.4.26-.73.09a9.2 9.2 0 0 1-2.7-1.67 10.2 10.2 0 0 1-1.87-2.33c-.2-.34 0-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.22.06-.42-.03-.59-.08-.17-.74-1.85-1.04-2.52-.25-.57-.52-.58-.76-.59h-.65z"/></svg>',
+  doc: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5L13 3.5zM8 12v2h8v-2H8zm0 4v2h8v-2H8z"/></svg>',
   check: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z"/></svg>',
   arrow: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 5.3 11.8 6.7l4.3 4.3H4v2h12.1l-4.3 4.3 1.4 1.4L20 12z"/></svg>',
   back: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 5.3 12.2 6.7 7.9 11H20v2H7.9l4.3 4.3-1.4 1.4L4 12z"/></svg>',
@@ -102,13 +116,7 @@ ${footer(lang)}
 function footer(lang) {
   const L = T[lang];
   const lab = L.footer.labels;
-  const rows = [
-    ['address', company.address.map(esc).join('<br>')],
-    ['nip', esc(company.nip)],
-    ['regon', esc(company.regon)],
-    ['krs', esc(company.krs)],
-    ['vatEu', esc(company.vatEu)],
-  ].filter(([, v]) => v).map(([k, v]) => `<dt>${esc(lab[k])}</dt><dd>${v}</dd>`).join('');
+  const rows = detailRows().map(([k, v]) => `<dt>${esc(lab[k])}</dt><dd>${v}</dd>`).join('');
   return `<footer class="site-footer">
   <div class="container footer-grid">
     <div>
@@ -124,7 +132,7 @@ function footer(lang) {
       <h2>${esc(L.footer.links)}</h2>
       <ul class="footer-links">
         <li><a href="${url.privacy(lang)}">${esc(L.footer.privacy)}</a></li>
-        <li><a href="${tel}">${esc(company.phone)}</a></li>
+        ${hasPhone ? `<li><a href="${tel}">${esc(company.phone)}</a></li>` : ''}
         <li><a href="${mail()}">${esc(company.email)}</a></li>
       </ul>
     </div>
@@ -151,24 +159,39 @@ function productCard(lang, p, small = false) {
 }
 
 function contactCards(lang) {
-  const C = T[lang].contact;
-  return `<div class="contact-grid">
-    <a class="contact-card" href="${tel}">
-      <span class="contact-icon">${icon.phone}</span>
-      <span class="contact-label">${esc(C.phone)}</span>
-      <span class="contact-value">${esc(company.phone)}</span>
-    </a>
-    <a class="contact-card" href="${mail()}">
+  const L = T[lang];
+  const C = L.contact;
+  const lab = L.footer.labels;
+  const cards = [];
+  cards.push(`<a class="contact-card" href="${mail()}">
       <span class="contact-icon">${icon.mail}</span>
       <span class="contact-label">${esc(C.email)}</span>
       <span class="contact-value">${esc(company.email)}</span>
-    </a>
-    <a class="contact-card" href="${wa()}" target="_blank" rel="noopener noreferrer">
+      <span class="contact-action">${esc(C.emailAction)} ${icon.arrow}</span>
+    </a>`);
+  if (hasPhone) {
+    cards.push(`<a class="contact-card" href="${tel}">
+      <span class="contact-icon">${icon.phone}</span>
+      <span class="contact-label">${esc(C.phone)}</span>
+      <span class="contact-value">${esc(company.phone)}</span>
+    </a>`);
+  }
+  if (hasWa) {
+    cards.push(`<a class="contact-card" href="${wa()}" target="_blank" rel="noopener noreferrer">
       <span class="contact-icon">${icon.chat}</span>
       <span class="contact-label">${esc(C.whatsapp)}</span>
       <span class="contact-value">${esc(company.whatsapp)}</span>
       <span class="contact-action">${esc(C.whatsappAction)} ${icon.arrow}</span>
-    </a>
+    </a>`);
+  }
+  cards.push(`<div class="contact-card contact-card-static">
+      <span class="contact-icon">${icon.doc}</span>
+      <span class="contact-label">${esc(L.footer.details)}</span>
+      <span class="contact-value">${esc(company.legalName)}</span>
+      <dl class="contact-dl">${detailRows().map(([k, v]) => `<dt>${esc(lab[k])}</dt><dd>${v}</dd>`).join('')}</dl>
+    </div>`);
+  return `<div class="contact-grid contact-grid-${cards.length}">
+    ${cards.join('\n    ')}
   </div>`;
 }
 
@@ -260,9 +283,10 @@ function productPage(lang, p) {
         <h2>${esc(P.inquiryTitle)}</h2>
         <p>${t(P.inquiryText)}</p>
         <div class="inquiry-actions">
-          <a class="btn btn-light" href="${wa(msg)}" target="_blank" rel="noopener noreferrer">${icon.chat} WhatsApp</a>
-          <a class="btn btn-light" href="${mail(p.name)}">${icon.mail} ${esc(L.contact.email)}</a>
-          <a class="btn btn-outline-light" href="${tel}">${icon.phone} ${esc(company.phone)}</a>
+          <a class="btn btn-light" href="${mail(p.name, msg)}">${icon.mail} ${esc(L.contact.emailAction)}</a>
+          ${hasWa ? `<a class="btn btn-light" href="${wa(msg)}" target="_blank" rel="noopener noreferrer">${icon.chat} WhatsApp</a>` : ''}
+          ${hasPhone ? `<a class="btn btn-outline-light" href="${tel}">${icon.phone} ${esc(company.phone)}</a>` : ''}
+          <span class="inquiry-email">${esc(company.email)}</span>
         </div>
       </aside>
     </div>

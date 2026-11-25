@@ -49,10 +49,11 @@
   "contact": {
     "eyebrow": "Kontakt",
     "title": "Skontaktuj się z nami",
-    "intro": "Zadzwoń, napisz e-mail lub wyślij wiadomość przez WhatsApp. Zwykle odpowiadamy w ciągu jednego dnia roboczego.",
+    "intro": "Napisz do nas e-mail, podając produkt, format i potrzebną ilość. Zwykle odpowiadamy w ciągu jednego dnia roboczego.",
     "phone": "Telefon",
     "email": "E-mail",
     "whatsapp": "WhatsApp",
+    "emailAction": "Napisz e-mail",
     "whatsappAction": "Wyślij wiadomość"
   },
   "footer": {
@@ -60,10 +61,8 @@
     "details": "Dane firmy",
     "labels": {
       "address": "Adres",
-      "nip": "NIP",
-      "regon": "REGON",
-      "krs": "KRS",
-      "vatEu": "VAT UE"
+      "regNo": "Nr rej.",
+      "vatEu": "Nr VAT UE"
     },
     "links": "Informacje",
     "privacy": "Polityka prywatności",
@@ -82,19 +81,13 @@
       {
         "title": "Jakie dane przetwarzamy i w jakim celu",
         "paragraphs": [
-          "Jeśli kontaktujesz się z nami telefonicznie, e-mailem lub przez WhatsApp, przetwarzamy przekazane nam dane — zwykle imię i nazwisko, nazwę firmy, dane kontaktowe i treść wiadomości — aby odpowiedzieć, przygotować ofertę i zrealizować zamówienie (art. 6 ust. 1 lit. b RODO) oraz w naszym prawnie uzasadnionym interesie, jakim jest prowadzenie korespondencji handlowej (art. 6 ust. 1 lit. f RODO)."
+          "Jeśli piszesz do nas e-mail, przetwarzamy przekazane nam dane — zwykle imię i nazwisko, nazwę firmy, dane kontaktowe i treść wiadomości — aby odpowiedzieć, przygotować ofertę i zrealizować zamówienie (art. 6 ust. 1 lit. b RODO) oraz w naszym prawnie uzasadnionym interesie, jakim jest prowadzenie korespondencji handlowej (art. 6 ust. 1 lit. f RODO)."
         ]
       },
       {
         "title": "Hosting strony",
         "paragraphs": [
           "Strona jest hostowana przez Cloudflare, Inc. Podczas otwierania strony Cloudflare przetwarza dane techniczne, takie jak adres IP, w logach serwera, aby dostarczyć stronę i chronić ją przed nadużyciami. Strona nie ładuje zewnętrznych czcionek, skryptów ani narzędzi śledzących."
-        ]
-      },
-      {
-        "title": "WhatsApp",
-        "paragraphs": [
-          "Jeśli piszesz do nas przez WhatsApp, wiadomość jest przetwarzana również przez WhatsApp Ireland Limited zgodnie z jego polityką prywatności."
         ]
       },
       {
@@ -106,7 +99,7 @@
       {
         "title": "Twoje prawa",
         "paragraphs": [
-          "Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, sprzeciwu wobec przetwarzania oraz przeniesienia danych. Możesz także wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO)."
+          "Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, sprzeciwu wobec przetwarzania oraz przeniesienia danych. Możesz także wnieść skargę do organu nadzorczego ds. ochrony danych: na Łotwie jest to Państwowa Inspekcja Danych (Datu valsts inspekcija), a w Polsce Prezes UODO."
         ]
       }
     ]

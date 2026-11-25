@@ -1,12 +1,10 @@
 {
   "brand": "Tagalika",
-  "legalName": "Tagalika [legal form]",
-  "address": ["[Street, number]", "[Postal code, City]", "[Country]"],
-  "nip": "[000-000-00-00]",
-  "regon": "[000000000]",
-  "krs": "[0000000000]",
-  "vatEu": "[PL0000000000]",
-  "phone": "+48 000 000 000",
-  "whatsapp": "+48 000 000 000",
-  "email": "info@tagalika.example"
+  "legalName": "SIA Tagalika",
+  "address": [],
+  "regNo": "40203135027",
+  "vatEu": "LV40203135027",
+  "email": "sia.tagalika@gmail.com",
+  "phone": "",
+  "whatsapp": ""
 }

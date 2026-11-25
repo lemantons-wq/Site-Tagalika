@@ -49,10 +49,11 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Get in touch",
-    "intro": "Call us, write an e-mail or send a message on WhatsApp. We usually reply within one business day.",
+    "intro": "Write to us by e-mail with the product, format and quantity you need. We usually reply within one business day.",
     "phone": "Phone",
     "email": "E-mail",
     "whatsapp": "WhatsApp",
+    "emailAction": "Write an e-mail",
     "whatsappAction": "Send a message"
   },
   "footer": {
@@ -60,10 +61,8 @@
     "details": "Company details",
     "labels": {
       "address": "Address",
-      "nip": "NIP",
-      "regon": "REGON",
-      "krs": "KRS",
-      "vatEu": "VAT EU"
+      "regNo": "Reg. No.",
+      "vatEu": "VAT No."
     },
     "links": "Information",
     "privacy": "Privacy policy",
@@ -82,19 +81,13 @@
       {
         "title": "What data we process and why",
         "paragraphs": [
-          "If you contact us by phone, e-mail or WhatsApp, we process the data you give us — usually your name, company, contact details and the content of your message — to reply to you, prepare an offer and carry out an order (Art. 6(1)(b) GDPR), and for our legitimate interest in conducting business correspondence (Art. 6(1)(f) GDPR)."
+          "If you write to us by e-mail, we process the data you give us — usually your name, company, contact details and the content of your message — to reply to you, prepare an offer and carry out an order (Art. 6(1)(b) GDPR), and for our legitimate interest in conducting business correspondence (Art. 6(1)(f) GDPR)."
         ]
       },
       {
         "title": "Website hosting",
         "paragraphs": [
           "The website is hosted by Cloudflare, Inc. When you open the site, Cloudflare processes technical data such as your IP address in server logs to deliver the pages and protect them against abuse. The site loads no external fonts, scripts or trackers."
-        ]
-      },
-      {
-        "title": "WhatsApp",
-        "paragraphs": [
-          "If you write to us on WhatsApp, the message is also processed by WhatsApp Ireland Limited under its own privacy policy."
         ]
       },
       {
@@ -106,7 +99,7 @@
       {
         "title": "Your rights",
         "paragraphs": [
-          "You have the right to access your data, have it corrected or erased, restrict its processing, object to processing and receive your data in a portable format. You may also lodge a complaint with a data protection supervisory authority; in Poland this is the President of the Personal Data Protection Office (UODO)."
+          "You have the right to access your data, have it corrected or erased, restrict its processing, object to processing and receive your data in a portable format. You may also lodge a complaint with a data protection supervisory authority: in Latvia this is the Data State Inspectorate (Datu valsts inspekcija), or the authority in your own EU country."
         ]
       }
     ]

@@ -139,6 +139,7 @@ svg { fill: currentColor; }
 .inquiry h2 { color: #fff; font-size: 1.35rem; }
 .inquiry p { color: rgba(255, 255, 255, .85); }
 .inquiry-actions { display: grid; gap: 10px; }
+.inquiry-email { text-align: center; color: rgba(255, 255, 255, .85); font-size: .95rem; overflow-wrap: anywhere; }
 .other-title { margin-top: 48px; }
 
 /* ---------- contact ---------- */
@@ -155,6 +156,12 @@ svg { fill: currentColor; }
 .contact-value { font-size: 1.2rem; font-weight: 600; color: var(--green-deep); overflow-wrap: anywhere; }
 .contact-action { margin-top: 6px; display: inline-flex; align-items: center; gap: 6px; color: var(--green); font-weight: 600; font-size: .95rem; }
 .contact-action svg { width: 18px; height: 18px; }
+.contact-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
+.contact-grid-4 { grid-template-columns: repeat(2, 1fr); }
+.contact-card-static:hover { border-color: var(--line); box-shadow: none; }
+.contact-dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin: 8px 0 0; color: var(--text); }
+.contact-dl dt { color: var(--muted); }
+.contact-dl dd { margin: 0; font-variant-numeric: tabular-nums; }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--green-deep); color: rgba(255, 255, 255, .78); font-size: .95rem; }
@@ -179,7 +186,7 @@ svg { fill: currentColor; }
 @media (max-width: 960px) {
   .hero-inner, .about-grid, .product-hero, .product-details { grid-template-columns: 1fr; }
   .hero-art { max-width: 560px; }
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid, .contact-grid-2, .contact-grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
 }
