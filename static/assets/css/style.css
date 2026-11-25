@@ -2,13 +2,13 @@
   --green: #23574a;
   --green-dark: #173d34;
   --green-deep: #12302a;
-  --green-soft: #e7efeb;
+  --green-soft: #dde9e2;
   --kraft: #b07c47;
-  --bg: #ffffff;
-  --bg-tint: #f4f6f4;
+  --bg: #e9eeeb;
+  --bg-tint: #dfe7e2;
   --text: #1c2523;
   --muted: #5b6763;
-  --line: #dde4e0;
+  --line: #cfd9d3;
   --radius: 14px;
   --shadow: 0 1px 2px rgba(18, 48, 42, .06), 0 8px 24px rgba(18, 48, 42, .07);
   --shadow-hover: 0 2px 4px rgba(18, 48, 42, .08), 0 16px 36px rgba(18, 48, 42, .13);
@@ -74,7 +74,7 @@ svg { fill: currentColor; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- hero ---------- */
-.hero { background: linear-gradient(180deg, #eef4f0 0%, #f7f9f7 100%); border-bottom: 1px solid var(--line); }
+.hero { background: linear-gradient(180deg, #dce7e0 0%, #e6ece8 100%); border-bottom: 1px solid var(--line); }
 .hero-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(24px, 4vw, 56px); align-items: center; padding-top: clamp(40px, 7vw, 88px); padding-bottom: clamp(40px, 7vw, 88px); }
 .hero-lead { font-size: 1.15rem; color: var(--muted); max-width: 36em; margin-bottom: 28px; }
 .hero-art img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
