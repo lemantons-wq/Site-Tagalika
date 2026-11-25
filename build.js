@@ -9,6 +9,9 @@ const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
 const LANGS = ['en', 'pl'];        // first one is the default language, served at "/"
 const DEFAULT = LANGS[0];
+// false = ask search engines not to index the site (meta robots + X-Robots-Tag header).
+// Set to true when the site should appear in Google.
+const ALLOW_INDEXING = false;
 
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'content', f), 'utf8'));
 const company = read('company.json');
@@ -67,7 +70,7 @@ function page({ lang, title, description, body, altPath, current }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${t(title)}</title>
 <meta name="description" content="${t(description)}">
-<meta name="theme-color" content="#23574a">
+<meta name="theme-color" content="#23574a">${ALLOW_INDEXING ? '' : '\n<meta name="robots" content="noindex, nofollow">'}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -311,6 +314,12 @@ function write(rel, html) {
 
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'static'), DIST, { recursive: true });
+
+if (!ALLOW_INDEXING) {
+  const h = path.join(DIST, '_headers');
+  const rules = fs.readFileSync(h, 'utf8').replace('/*\n', '/*\n  X-Robots-Tag: noindex, nofollow\n');
+  fs.writeFileSync(h, rules);
+}
 
 let count = 0;
 for (const lang of LANGS) {

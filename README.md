@@ -39,3 +39,7 @@ Workers & Pages → Create → Pages → Connect to Git → выбрать эт�
 - **Build output directory:** `dist`
 
 Заголовки безопасности задаются в `static/_headers`.
+
+## Индексация поисковиками
+
+Сейчас индексация **выключена**: в каждой странице стоит `noindex`, и Cloudflare отдаёт заголовок `X-Robots-Tag: noindex`. Чтобы включить её, поменяйте в начале `build.js` значение `ALLOW_INDEXING = false` на `true`.
