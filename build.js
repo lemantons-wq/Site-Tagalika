@@ -93,6 +93,7 @@ function page({ lang, title, description, body, altPath, current }) {
 <link rel="stylesheet" href="/assets/css/style.css?v=${cssVersion}">
 </head>
 <body class="page-${current}">
+<!--email_off--><!-- tells Cloudflare not to obfuscate e-mail addresses (its decoder script is blocked by our CSP) -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="${h}">${logoMark}<span>${esc(company.brand)}</span></a>
@@ -108,6 +109,7 @@ function page({ lang, title, description, body, altPath, current }) {
 ${body}
 </main>
 ${footer(lang)}
+<!--/email_off-->
 </body>
 </html>
 `;
