@@ -12,19 +12,19 @@
     "menu": "Menu"
   },
   "hero": {
-    "eyebrow": "Materiały opakowaniowe · UE i poza nią",
-    "title": "Materiały opakowaniowe dla przemysłu spożywczego i nie tylko, z dostawą w całej Europie i poza nią.",
-    "text": "Laminaty aluminiowe, papiery do żywności i papiery kraft, folia polipropylenowa, rolki techniczne i kleje — od sprawdzonych producentów, w formatach, których potrzebujesz.",
+    "title": "Materiały opakowaniowe dla przemysłu spożywczego i nie tylko.",
+    "text": "Dostawy w całej UE i poza nią: laminaty aluminiowe, papiery do żywności i kraft, folia polipropylenowa, rolki techniczne i kleje od sprawdzonych producentów, w potrzebnych formatach.",
     "cta": "Zobacz produkty",
-    "cta2": "Skontaktuj się"
+    "cta2": "Skontaktuj się",
+    "facts": [
+      { "label": "Dostawa", "value": "UE i eksport" },
+      { "label": "Zamówienie", "value": "Od jednej palety" },
+      { "label": "Dokumenty", "value": "Kontakt z żywnością, TDS / SDS" }
+    ]
   },
   "about": {
-    "eyebrow": "O nas",
-    "title": "Niezawodny partner w dostawach opakowań",
-    "paragraphs": [
-      "Tagalika dostarcza materiały opakowaniowe producentom żywności i zakładom przemysłowym w całej Unii Europejskiej i poza nią. Współpracujemy ze sprawdzonymi europejskimi papierniami i zakładami przetwórczymi i dostarczamy laminaty aluminiowe, papiery do kontaktu z żywnością i papiery kraft, dekoracyjne papiery do pakowania, folię polipropylenową, rolki techniczne oraz kleje do opakowań.",
-      "Dostarczamy materiały w formatach, szerokościach i ilościach, których potrzebują nasi klienci — z jasną specyfikacją, terminowymi dostawami i bezpośrednią, osobistą obsługą od pierwszego zapytania aż do dostawy."
-    ],
+    "title": "O firmie Tagalika",
+    "paragraphs": ["Tagalika dostarcza materiały opakowaniowe producentom żywności i zakładom przemysłowym w całej Unii Europejskiej i poza nią. Współpracujemy ze sprawdzonymi europejskimi papierniami i zakładami przetwórczymi i dostarczamy laminaty aluminiowe, papiery do kontaktu z żywnością i papiery kraft, dekoracyjne papiery do pakowania, folię polipropylenową, rolki techniczne oraz kleje do opakowań.", "Dostarczamy materiały w formatach, szerokościach i ilościach, których potrzebują nasi klienci, z jasną specyfikacją, terminowymi dostawami i bezpośrednią, osobistą obsługą od pierwszego zapytania aż do dostawy."],
     "points": [
       { "title": "UE i poza nią", "text": "Dostawy na terenie całej Unii Europejskiej oraz na rynki spoza UE." },
       { "title": "Do kontaktu z żywnością", "text": "Materiały do pakowania żywności, dokumenty zgodności dostępne na życzenie." },
@@ -33,11 +33,8 @@
     ]
   },
   "products": {
-    "eyebrow": "Produkty",
     "title": "Co dostarczamy",
     "intro": "Wybierz kategorię, aby zobaczyć szczegóły i typowe parametry. Inne gatunki i formaty dostępne na zapytanie.",
-    "more": "Szczegóły",
-    "back": "Wszystkie produkty",
     "features": "Główne cechy",
     "specs": "Typowe parametry",
     "specsNote": "Parametry mają charakter orientacyjny. Inne parametry dostępne na zapytanie.",
@@ -47,8 +44,7 @@
     "other": "Pozostałe produkty"
   },
   "contact": {
-    "eyebrow": "Kontakt",
-    "title": "Skontaktuj się z nami",
+    "title": "Kontakt",
     "intro": "Zadzwoń, napisz e-mail lub wyślij wiadomość przez WhatsApp. Zwykle odpowiadamy w ciągu jednego dnia roboczego.",
     "phone": "Telefon",
     "email": "E-mail",
@@ -56,7 +52,7 @@
     "whatsappAction": "Wyślij wiadomość"
   },
   "footer": {
-    "tagline": "Materiały opakowaniowe dla przemysłu spożywczego i nie tylko — w UE i poza nią.",
+    "tagline": "Materiały opakowaniowe dla przemysłu spożywczego i nie tylko, w UE i poza nią.",
     "details": "Dane firmy",
     "labels": {
       "address": "Adres",
@@ -82,7 +78,7 @@
       {
         "title": "Jakie dane przetwarzamy i w jakim celu",
         "paragraphs": [
-          "Jeśli kontaktujesz się z nami telefonicznie, e-mailem lub przez WhatsApp, przetwarzamy przekazane nam dane — zwykle imię i nazwisko, nazwę firmy, dane kontaktowe i treść wiadomości — aby odpowiedzieć, przygotować ofertę i zrealizować zamówienie (art. 6 ust. 1 lit. b RODO) oraz w naszym prawnie uzasadnionym interesie, jakim jest prowadzenie korespondencji handlowej (art. 6 ust. 1 lit. f RODO)."
+          "Jeśli kontaktujesz się z nami telefonicznie, e-mailem lub przez WhatsApp, przetwarzamy przekazane nam dane (zwykle imię i nazwisko, nazwę firmy, dane kontaktowe i treść wiadomości), aby odpowiedzieć, przygotować ofertę i zrealizować zamówienie (art. 6 ust. 1 lit. b RODO) oraz w naszym prawnie uzasadnionym interesie, jakim jest prowadzenie korespondencji handlowej (art. 6 ust. 1 lit. f RODO)."
         ]
       },
       {
@@ -121,7 +117,7 @@
       "slug": "inner-liner",
       "image": "inner-liner.svg",
       "name": "Laminaty aluminiowe (inner liner)",
-      "short": "Folia aluminiowa laminowana z papierem — wkładki barierowe do opakowań tytoniowych, cukierniczych i spożywczych.",
+      "short": "Folia aluminiowa laminowana z papierem. Wkładki barierowe do opakowań tytoniowych, cukierniczych i spożywczych.",
       "intro": [
         "Laminaty cienkiej folii aluminiowej i papieru stosowane jako wkładki wewnętrzne i owijki. Chronią zawartość przed wilgocią, światłem i utratą aromatu oraz pracują stabilnie na szybkich maszynach pakujących."
       ],

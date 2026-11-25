@@ -48,8 +48,6 @@ const icon = {
   mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.4l8 5 8-5V7H4zm16 2.75-7.47 4.67a1 1 0 0 1-1.06 0L4 9.75V17h16V9.75z"/></svg>',
   chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.27a.6.6 0 0 0 .74.74L7.05 20.7A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.25 14.78.9.9 0 0 0-.72-.1l-2.5.76.76-2.5a.9.9 0 0 0-.1-.72A8 8 0 0 1 12 4zm-3.2 4.3c-.25 0-.6.1-.9.45-.3.33-1.2 1.17-1.2 2.85s1.23 3.3 1.4 3.53c.17.23 2.4 3.67 5.83 5.15 2.86 1.13 3.44.9 4.06.85.62-.06 2-.82 2.28-1.6.28-.8.28-1.47.2-1.6-.09-.15-.31-.23-.65-.4-.34-.17-2-.99-2.3-1.1-.31-.12-.54-.17-.76.17-.23.34-.87 1.1-1.07 1.32-.2.23-.4.26-.73.09a9.2 9.2 0 0 1-2.7-1.67 10.2 10.2 0 0 1-1.87-2.33c-.2-.34 0-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.22.06-.42-.03-.59-.08-.17-.74-1.85-1.04-2.52-.25-.57-.52-.58-.76-.59h-.65z"/></svg>',
   check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z"/></svg>',
-  arrow: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 5.3 11.8 6.7l4.3 4.3H4v2h12.1l-4.3 4.3 1.4 1.4L20 12z"/></svg>',
-  back: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 5.3 12.2 6.7 7.9 11H20v2H7.9l4.3 4.3-1.4 1.4L4 12z"/></svg>',
 };
 const logoMark = '<svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#23574a"/><circle cx="16" cy="18" r="9.5" fill="none" stroke="#fff" stroke-width="3"/><circle cx="16" cy="18" r="3.2" fill="#d9b27c"/><path d="M16 27.5h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>';
 
@@ -72,6 +70,7 @@ function page({ lang, title, description, body, altPath, current }) {
 <meta name="description" content="${t(description)}">
 <meta name="theme-color" content="#23574a">${ALLOW_INDEXING ? '' : '\n<meta name="robots" content="noindex, nofollow">'}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="page-${current}">
@@ -107,9 +106,9 @@ function footer(lang) {
   ].filter(([, v]) => v).map(([k, v]) => `<dt>${esc(lab[k])}</dt><dd>${v}</dd>`).join('');
   return `<footer class="site-footer">
   <div class="container footer-grid">
-    <div>
-      <div class="logo logo-light">${logoMark}<span>${esc(company.brand)}</span></div>
-      <p class="footer-tagline">${t(L.footer.tagline)}</p>
+    <div class="footer-brand">
+      <div class="logo">${logoMark}<span>${esc(company.brand)}</span></div>
+      <p>${t(L.footer.tagline)}</p>
     </div>
     <div>
       <h2>${esc(L.footer.details)}</h2>
@@ -129,43 +128,42 @@ function footer(lang) {
 </footer>`;
 }
 
-const sectionHead = (eyebrow, title, intro) => `
-  <p class="eyebrow">${esc(eyebrow)}</p>
-  <h2 class="section-title">${esc(title)}</h2>
-  ${intro ? `<p class="section-intro">${t(intro)}</p>` : ''}`;
+const sectionHead = (title, intro) => `
+  <header class="section-head">
+    <h2 class="section-title">${esc(title)}</h2>
+    ${intro ? `<p class="section-intro">${t(intro)}</p>` : ''}
+  </header>`;
 
+// A product tile reads like the label on a reel: name, one line, two real parameters.
 function productCard(lang, p, small = false) {
-  const L = T[lang];
-  return `<a class="product-card${small ? ' product-card-small' : ''}" href="${url.product(lang, p.slug)}">
+  const rows = small ? '' : `<dl class="reel-label">
+      ${p.specs.slice(0, 2).map(([k, v]) => `<div><dt>${t(k)}</dt><dd>${t(v)}</dd></div>`).join('\n      ')}
+    </dl>`;
+  return `<a class="product-tile${small ? ' product-tile-small' : ''}" href="${url.product(lang, p.slug)}">
     <div class="product-img"><img src="/assets/img/${esc(p.image)}" alt="" width="800" height="600" loading="lazy"></div>
-    <div class="product-body">
-      <h3>${esc(p.name)}</h3>
-      ${small ? '' : `<p>${t(p.short)}</p>`}
-      <span class="more">${esc(L.products.more)} ${icon.arrow}</span>
-    </div>
+    <h3>${esc(p.name)}</h3>
+    ${small ? '' : `<p>${t(p.short)}</p>`}
+    ${rows}
   </a>`;
 }
 
-function contactCards(lang) {
+function contactList(lang) {
   const C = T[lang].contact;
-  return `<div class="contact-grid">
-    <a class="contact-card" href="${tel}">
-      <span class="contact-icon">${icon.phone}</span>
-      <span class="contact-label">${esc(C.phone)}</span>
-      <span class="contact-value">${esc(company.phone)}</span>
-    </a>
-    <a class="contact-card" href="${mail()}">
-      <span class="contact-icon">${icon.mail}</span>
-      <span class="contact-label">${esc(C.email)}</span>
-      <span class="contact-value">${esc(company.email)}</span>
-    </a>
-    <a class="contact-card" href="${wa()}" target="_blank" rel="noopener noreferrer">
-      <span class="contact-icon">${icon.chat}</span>
-      <span class="contact-label">${esc(C.whatsapp)}</span>
-      <span class="contact-value">${esc(company.whatsapp)}</span>
-      <span class="contact-action">${esc(C.whatsappAction)} ${icon.arrow}</span>
-    </a>
-  </div>`;
+  return `<ul class="contact-list">
+    <li>
+      <span class="contact-label">${icon.phone}${esc(C.phone)}</span>
+      <a class="contact-value" href="${tel}">${esc(company.phone)}</a>
+    </li>
+    <li>
+      <span class="contact-label">${icon.mail}${esc(C.email)}</span>
+      <a class="contact-value" href="${mail()}">${esc(company.email)}</a>
+    </li>
+    <li>
+      <span class="contact-label">${icon.chat}${esc(C.whatsapp)}</span>
+      <a class="contact-value" href="${wa()}" target="_blank" rel="noopener noreferrer">${esc(company.whatsapp)}</a>
+      <a class="contact-action" href="${wa()}" target="_blank" rel="noopener noreferrer">${esc(C.whatsappAction)}</a>
+    </li>
+  </ul>`;
 }
 
 // ---- pages ----
@@ -175,43 +173,45 @@ function homePage(lang) {
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-text">
-      <p class="eyebrow">${esc(L.hero.eyebrow)}</p>
       <h1>${t(L.hero.title)}</h1>
       <p class="hero-lead">${t(L.hero.text)}</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="#products">${esc(L.hero.cta)} ${icon.arrow}</a>
+        <a class="btn btn-primary" href="#products">${esc(L.hero.cta)}</a>
         <a class="btn btn-ghost" href="#contact">${esc(L.hero.cta2)}</a>
       </div>
     </div>
     <div class="hero-art"><img src="/assets/img/hero.svg" alt="" width="900" height="720"></div>
+    ${L.hero.facts ? `<dl class="hero-facts">
+      ${L.hero.facts.map((f) => `<div><dt>${esc(f.label)}</dt><dd>${t(f.value)}</dd></div>`).join('\n      ')}
+    </dl>` : ''}
   </div>
 </section>
 
 <section id="about" class="section">
   <div class="container about-grid">
-    <div>
-      ${sectionHead(L.about.eyebrow, L.about.title)}
+    <h2 class="section-title">${esc(L.about.title)}</h2>
+    <div class="about-text">
       ${L.about.paragraphs.map((p) => `<p>${t(p)}</p>`).join('\n      ')}
     </div>
     <ul class="points">
-      ${L.about.points.map((p) => `<li><span class="point-icon">${icon.check}</span><div><h3>${esc(p.title)}</h3><p>${t(p.text)}</p></div></li>`).join('\n      ')}
+      ${L.about.points.map((p) => `<li><h3>${esc(p.title)}</h3><p>${t(p.text)}</p></li>`).join('\n      ')}
     </ul>
   </div>
 </section>
 
 <section id="products" class="section section-tint">
   <div class="container">
-    ${sectionHead(L.products.eyebrow, L.products.title, L.products.intro)}
+    ${sectionHead(L.products.title, L.products.intro)}
     <div class="product-grid">
       ${L.productList.map((p) => productCard(lang, p)).join('\n      ')}
     </div>
   </div>
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section section-pine">
   <div class="container">
-    ${sectionHead(L.contact.eyebrow, L.contact.title, L.contact.intro)}
-    ${contactCards(lang)}
+    ${sectionHead(L.contact.title, L.contact.intro)}
+    ${contactList(lang)}
   </div>
 </section>`;
   return page({
@@ -228,13 +228,16 @@ function productPage(lang, p) {
   const body = `
 <section class="section product-page">
   <div class="container">
-    <a class="back-link" href="${url.home(lang)}#products">${icon.back} ${esc(P.back)}</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="${url.home(lang)}#products">${esc(L.nav.products)}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">${esc(p.name)}</span>
+    </nav>
     <article class="product-hero">
       <div class="product-hero-img"><img src="/assets/img/${esc(p.image)}" alt="" width="800" height="600"></div>
       <div class="product-hero-text">
-        <p class="eyebrow">${esc(P.eyebrow)}</p>
         <h1>${esc(p.name)}</h1>
-        ${p.intro.map((x) => `<p>${t(x)}</p>`).join('\n        ')}
+        ${p.intro.map((x) => `<p class="lead">${t(x)}</p>`).join('\n        ')}
         <h2 class="small-title">${esc(P.features)}</h2>
         <ul class="checklist">
           ${p.features.map((f) => `<li>${icon.check}<span>${t(f)}</span></li>`).join('\n          ')}
