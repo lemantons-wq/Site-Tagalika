@@ -3,6 +3,7 @@
 // Usage: node build.js     (no dependencies)
 'use strict';
 const fs = require('fs');
+const crypto = require('crypto');
 const path = require('path');
 
 const ROOT = __dirname;
@@ -15,6 +16,9 @@ const ALLOW_INDEXING = false;
 
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'content', f), 'utf8'));
 const company = read('company.json');
+// Version the stylesheet URL by its content, so browsers never mix new pages with an old cached stylesheet
+const cssVersion = crypto.createHash('sha1')
+  .update(fs.readFileSync(path.join(ROOT, 'static', 'assets', 'css', 'style.css'))).digest('hex').slice(0, 10);
 const T = Object.fromEntries(LANGS.map((l) => [l, read(`${l}.json`)]));
 
 // ---- sanity check: both languages must list the same products ----
@@ -44,10 +48,10 @@ const wa = (text) => `https://wa.me/${digits(company.whatsapp)}${text ? `?text=$
 const mail = (subject) => `mailto:${company.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
 
 const icon = {
-  phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>',
-  mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.4l8 5 8-5V7H4zm16 2.75-7.47 4.67a1 1 0 0 1-1.06 0L4 9.75V17h16V9.75z"/></svg>',
-  chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.27a.6.6 0 0 0 .74.74L7.05 20.7A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.25 14.78.9.9 0 0 0-.72-.1l-2.5.76.76-2.5a.9.9 0 0 0-.1-.72A8 8 0 0 1 12 4zm-3.2 4.3c-.25 0-.6.1-.9.45-.3.33-1.2 1.17-1.2 2.85s1.23 3.3 1.4 3.53c.17.23 2.4 3.67 5.83 5.15 2.86 1.13 3.44.9 4.06.85.62-.06 2-.82 2.28-1.6.28-.8.28-1.47.2-1.6-.09-.15-.31-.23-.65-.4-.34-.17-2-.99-2.3-1.1-.31-.12-.54-.17-.76.17-.23.34-.87 1.1-1.07 1.32-.2.23-.4.26-.73.09a9.2 9.2 0 0 1-2.7-1.67 10.2 10.2 0 0 1-1.87-2.33c-.2-.34 0-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.22.06-.42-.03-.59-.08-.17-.74-1.85-1.04-2.52-.25-.57-.52-.58-.76-.59h-.65z"/></svg>',
-  check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z"/></svg>',
+  phone: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>',
+  mail: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.4l8 5 8-5V7H4zm16 2.75-7.47 4.67a1 1 0 0 1-1.06 0L4 9.75V17h16V9.75z"/></svg>',
+  chat: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.27a.6.6 0 0 0 .74.74L7.05 20.7A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.25 14.78.9.9 0 0 0-.72-.1l-2.5.76.76-2.5a.9.9 0 0 0-.1-.72A8 8 0 0 1 12 4zm-3.2 4.3c-.25 0-.6.1-.9.45-.3.33-1.2 1.17-1.2 2.85s1.23 3.3 1.4 3.53c.17.23 2.4 3.67 5.83 5.15 2.86 1.13 3.44.9 4.06.85.62-.06 2-.82 2.28-1.6.28-.8.28-1.47.2-1.6-.09-.15-.31-.23-.65-.4-.34-.17-2-.99-2.3-1.1-.31-.12-.54-.17-.76.17-.23.34-.87 1.1-1.07 1.32-.2.23-.4.26-.73.09a9.2 9.2 0 0 1-2.7-1.67 10.2 10.2 0 0 1-1.87-2.33c-.2-.34 0-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.22.06-.42-.03-.59-.08-.17-.74-1.85-1.04-2.52-.25-.57-.52-.58-.76-.59h-.65z"/></svg>',
+  check: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z"/></svg>',
 };
 const logoMark = '<svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#23574a"/><circle cx="16" cy="18" r="9.5" fill="none" stroke="#fff" stroke-width="3"/><circle cx="16" cy="18" r="3.2" fill="#d9b27c"/><path d="M16 27.5h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>';
 
@@ -71,7 +75,7 @@ function page({ lang, title, description, body, altPath, current }) {
 <meta name="theme-color" content="#23574a">${ALLOW_INDEXING ? '' : '\n<meta name="robots" content="noindex, nofollow">'}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=${cssVersion}">
 </head>
 <body class="page-${current}">
 <header class="site-header">
