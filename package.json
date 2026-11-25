@@ -1,0 +1,9 @@
+{
+  "name": "tagalika-site",
+  "private": true,
+  "description": "Tagalika business card website (static, EN/PL)",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "node build.js && python3 -m http.server 8080 -d dist"
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "lang": "en",
+  "label": "EN",
+  "meta": {
+    "title": "Tagalika — packaging materials for food and industry",
+    "description": "Tagalika supplies packaging materials to food producers and industrial manufacturers across the European Union and beyond."
+  },
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "hero": {
+    "eyebrow": "Packaging materials · EU and beyond",
+    "title": "Packaging materials for food and industry, delivered across Europe and beyond.",
+    "text": "Aluminium liners, food-grade and kraft papers, polypropylene film, technical rolls and adhesives — sourced from proven manufacturers and supplied in the formats you need.",
+    "cta": "View products",
+    "cta2": "Contact us"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "A reliable partner for packaging supplies",
+    "paragraphs": [
+      "Tagalika supplies packaging materials to food producers and industrial manufacturers across the European Union and beyond. We work with proven European mills and converters and deliver aluminium liners, food-grade and kraft papers, decorative wrapping papers, polypropylene film, technical rolls and packaging adhesives.",
+      "We supply materials in the formats, widths and quantities our customers need, with clear specifications, reliable lead times and direct, personal service — from the first inquiry to delivery."
+    ],
+    "points": [
+      { "title": "EU and beyond", "text": "Deliveries across the European Union and to non-EU markets." },
+      { "title": "Food-contact grades", "text": "Materials for food packaging, with compliance documents available on request." },
+      { "title": "Flexible volumes", "text": "From a single pallet to regular, scheduled supplies." },
+      { "title": "Direct contact", "text": "One contact person handles your order from inquiry to delivery." }
+    ]
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "What we supply",
+    "intro": "Choose a category to see details and typical specifications. Other grades and formats are available on request.",
+    "more": "Details",
+    "back": "All products",
+    "features": "Key features",
+    "specs": "Typical specifications",
+    "specsNote": "Specifications are indicative. Other parameters are available on request.",
+    "inquiryTitle": "Interested in this product?",
+    "inquiryText": "Send us the grade, format and quantity you need, and we will reply with an offer.",
+    "inquiryMessage": "Hello, I am interested in: ",
+    "other": "Other products"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "intro": "Call us, write an e-mail or send a message on WhatsApp. We usually reply within one business day.",
+    "phone": "Phone",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "whatsappAction": "Send a message"
+  },
+  "footer": {
+    "tagline": "Packaging materials for food and industry across the EU and beyond.",
+    "details": "Company details",
+    "labels": {
+      "address": "Address",
+      "nip": "NIP",
+      "regon": "REGON",
+      "krs": "KRS",
+      "vatEu": "VAT EU"
+    },
+    "links": "Information",
+    "privacy": "Privacy policy",
+    "rights": "All rights reserved."
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "intro": "This website is a business card of {{legalName}}. It has no contact forms, uses no cookies and runs no analytics or advertising tools.",
+    "sections": [
+      {
+        "title": "Data controller",
+        "paragraphs": [
+          "The controller of your personal data is {{legalName}} (company details are given at the bottom of this page). For any privacy matters, write to {{email}}."
+        ]
+      },
+      {
+        "title": "What data we process and why",
+        "paragraphs": [
+          "If you contact us by phone, e-mail or WhatsApp, we process the data you give us — usually your name, company, contact details and the content of your message — to reply to you, prepare an offer and carry out an order (Art. 6(1)(b) GDPR), and for our legitimate interest in conducting business correspondence (Art. 6(1)(f) GDPR)."
+        ]
+      },
+      {
+        "title": "Website hosting",
+        "paragraphs": [
+          "The website is hosted by Cloudflare, Inc. When you open the site, Cloudflare processes technical data such as your IP address in server logs to deliver the pages and protect them against abuse. The site loads no external fonts, scripts or trackers."
+        ]
+      },
+      {
+        "title": "WhatsApp",
+        "paragraphs": [
+          "If you write to us on WhatsApp, the message is also processed by WhatsApp Ireland Limited under its own privacy policy."
+        ]
+      },
+      {
+        "title": "Retention",
+        "paragraphs": [
+          "We keep correspondence for as long as needed to handle your inquiry and our business relationship, and afterwards for as long as required by law (for example tax and accounting rules) or to establish and defend claims."
+        ]
+      },
+      {
+        "title": "Your rights",
+        "paragraphs": [
+          "You have the right to access your data, have it corrected or erased, restrict its processing, object to processing and receive your data in a portable format. You may also lodge a complaint with a data protection supervisory authority; in Poland this is the President of the Personal Data Protection Office (UODO)."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist.",
+    "back": "Back to home page"
+  },
+  "productList": [
+    {
+      "slug": "inner-liner",
+      "image": "inner-liner.svg",
+      "name": "Aluminium inner liners",
+      "short": "Aluminium foil laminated to paper — barrier liners for tobacco, confectionery and food packs.",
+      "intro": [
+        "Laminates of thin aluminium foil and paper used as inner liners and wrappers. They protect the contents from moisture, light and loss of aroma and run smoothly on high-speed packing machines."
+      ],
+      "features": [
+        "High barrier against moisture, light and aroma loss",
+        "Silver, gold, embossed and printed finishes",
+        "Stable running on high-speed packing machines",
+        "Reels slit to your width"
+      ],
+      "specs": [
+        ["Construction", "Aluminium foil + paper"],
+        ["Finishes", "Silver, gold, embossed, printed on request"],
+        ["Format", "Reels slit to customer width"],
+        ["Core", "76 mm (3\") or on request"]
+      ]
+    },
+    {
+      "slug": "food-packaging-paper",
+      "image": "food-paper.svg",
+      "name": "Food packaging papers",
+      "short": "Greaseproof, kraft and coated papers for packing food.",
+      "intro": [
+        "Papers for wrapping and packing food: greaseproof, kraft and coated grades for bakeries, delis, fast food, meat, fish and confectionery producers."
+      ],
+      "features": [
+        "Grades suitable for food contact",
+        "Grease- and moisture-resistant options",
+        "White or natural brown",
+        "Rolls or sheets cut to size"
+      ],
+      "specs": [
+        ["Grades", "Greaseproof, kraft, coated"],
+        ["Grammage", "30–80 g/m² (typical)"],
+        ["Format", "Rolls or sheets"],
+        ["Documents", "Food-contact declarations on request"]
+      ]
+    },
+    {
+      "slug": "wrapping-paper",
+      "image": "wrapping.svg",
+      "name": "Decorative wrapping papers",
+      "short": "Coloured kraft papers for flowers, gifts and retail.",
+      "intro": [
+        "Decorative kraft papers for florists, gift wrapping and retail presentation. They combine attractive colours with good strength and flexibility, so they wrap easily and keep a neat look."
+      ],
+      "features": [
+        "Wide range of colours",
+        "Smooth or ribbed surface",
+        "Good strength and flexibility",
+        "Recyclable"
+      ],
+      "specs": [
+        ["Material", "Coloured kraft paper, smooth or ribbed"],
+        ["Colours", "Wide range, colour card on request"],
+        ["Format", "Rolls or sheets"],
+        ["Use", "Flowers, gifts, retail packaging"]
+      ]
+    },
+    {
+      "slug": "polypropylene-film",
+      "image": "pp-film.svg",
+      "name": "Polypropylene film rolls",
+      "short": "PP / BOPP film in rolls: transparent, white or metallised.",
+      "intro": [
+        "Polypropylene film in rolls for wrapping, lamination, labels and bag making. Clear, white, matte and metallised versions in widths matched to your machines."
+      ],
+      "features": [
+        "Transparent, white, matte or metallised",
+        "Good clarity and stiffness",
+        "Moisture barrier",
+        "Rolls slit to your width"
+      ],
+      "specs": [
+        ["Material", "PP / BOPP"],
+        ["Types", "Transparent, white, matte, metallised"],
+        ["Thickness", "15–50 µm (typical)"],
+        ["Format", "Rolls slit to customer width"]
+      ]
+    },
+    {
+      "slug": "plotter-rolls",
+      "image": "plotter.svg",
+      "name": "Plotter and engineering rolls",
+      "short": "Uncoated white paper rolls for plotters, CAD and copiers.",
+      "intro": [
+        "High-white uncoated paper rolls for wide-format plotters, CAD printing and engineering copiers, suitable for inkjet and laser devices."
+      ],
+      "features": [
+        "High-white uncoated paper",
+        "Standard ISO and inch widths",
+        "Plotter and engineering copy versions",
+        "Clean, even winding"
+      ],
+      "specs": [
+        ["Grammage", "80 and 90 g/m²"],
+        ["Width", "297–1118 mm"],
+        ["Plotter rolls", "Core 50.8 mm (2\"), 40–50 m"],
+        ["Engineering copy rolls", "Core 76.2 mm (3\"), 150–175 m"]
+      ]
+    },
+    {
+      "slug": "adhesives",
+      "image": "adhesive.svg",
+      "name": "Adhesives in 22 kg canisters",
+      "short": "Industrial adhesives for packaging and paper converting.",
+      "intro": [
+        "Industrial adhesives for carton and case sealing, labelling, lamination and paper converting, supplied in convenient 22 kg canisters."
+      ],
+      "features": [
+        "22 kg canisters",
+        "Adhesive selected for your application and machine",
+        "Single canisters or full pallets",
+        "Technical and safety data sheets on request"
+      ],
+      "specs": [
+        ["Packaging", "22 kg canister"],
+        ["Applications", "Carton sealing, labelling, lamination, paper converting"],
+        ["Delivery", "Single canisters or full pallets"],
+        ["Documents", "TDS / SDS on request"]
+      ]
+    }
+  ]
+}

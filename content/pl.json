@@ -1,0 +1,247 @@
+{
+  "lang": "pl",
+  "label": "PL",
+  "meta": {
+    "title": "Tagalika — materiały opakowaniowe dla przemysłu spożywczego i nie tylko",
+    "description": "Tagalika dostarcza materiały opakowaniowe producentom żywności i zakładom przemysłowym w całej Unii Europejskiej i poza nią."
+  },
+  "nav": {
+    "about": "O nas",
+    "products": "Produkty",
+    "contact": "Kontakt",
+    "menu": "Menu"
+  },
+  "hero": {
+    "eyebrow": "Materiały opakowaniowe · UE i poza nią",
+    "title": "Materiały opakowaniowe dla przemysłu spożywczego i nie tylko, z dostawą w całej Europie i poza nią.",
+    "text": "Laminaty aluminiowe, papiery do żywności i papiery kraft, folia polipropylenowa, rolki techniczne i kleje — od sprawdzonych producentów, w formatach, których potrzebujesz.",
+    "cta": "Zobacz produkty",
+    "cta2": "Skontaktuj się"
+  },
+  "about": {
+    "eyebrow": "O nas",
+    "title": "Niezawodny partner w dostawach opakowań",
+    "paragraphs": [
+      "Tagalika dostarcza materiały opakowaniowe producentom żywności i zakładom przemysłowym w całej Unii Europejskiej i poza nią. Współpracujemy ze sprawdzonymi europejskimi papierniami i zakładami przetwórczymi i dostarczamy laminaty aluminiowe, papiery do kontaktu z żywnością i papiery kraft, dekoracyjne papiery do pakowania, folię polipropylenową, rolki techniczne oraz kleje do opakowań.",
+      "Dostarczamy materiały w formatach, szerokościach i ilościach, których potrzebują nasi klienci — z jasną specyfikacją, terminowymi dostawami i bezpośrednią, osobistą obsługą od pierwszego zapytania aż do dostawy."
+    ],
+    "points": [
+      { "title": "UE i poza nią", "text": "Dostawy na terenie całej Unii Europejskiej oraz na rynki spoza UE." },
+      { "title": "Do kontaktu z żywnością", "text": "Materiały do pakowania żywności, dokumenty zgodności dostępne na życzenie." },
+      { "title": "Elastyczne ilości", "text": "Od jednej palety po regularne, planowane dostawy." },
+      { "title": "Bezpośredni kontakt", "text": "Jedna osoba prowadzi Twoje zamówienie od zapytania do dostawy." }
+    ]
+  },
+  "products": {
+    "eyebrow": "Produkty",
+    "title": "Co dostarczamy",
+    "intro": "Wybierz kategorię, aby zobaczyć szczegóły i typowe parametry. Inne gatunki i formaty dostępne na zapytanie.",
+    "more": "Szczegóły",
+    "back": "Wszystkie produkty",
+    "features": "Główne cechy",
+    "specs": "Typowe parametry",
+    "specsNote": "Parametry mają charakter orientacyjny. Inne parametry dostępne na zapytanie.",
+    "inquiryTitle": "Interesuje Cię ten produkt?",
+    "inquiryText": "Napisz, jakiego gatunku, formatu i ilości potrzebujesz, a przygotujemy ofertę.",
+    "inquiryMessage": "Dzień dobry, interesuje mnie: ",
+    "other": "Pozostałe produkty"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Skontaktuj się z nami",
+    "intro": "Zadzwoń, napisz e-mail lub wyślij wiadomość przez WhatsApp. Zwykle odpowiadamy w ciągu jednego dnia roboczego.",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "whatsappAction": "Wyślij wiadomość"
+  },
+  "footer": {
+    "tagline": "Materiały opakowaniowe dla przemysłu spożywczego i nie tylko — w UE i poza nią.",
+    "details": "Dane firmy",
+    "labels": {
+      "address": "Adres",
+      "nip": "NIP",
+      "regon": "REGON",
+      "krs": "KRS",
+      "vatEu": "VAT UE"
+    },
+    "links": "Informacje",
+    "privacy": "Polityka prywatności",
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "privacy": {
+    "title": "Polityka prywatności",
+    "intro": "Ta strona jest wizytówką firmy {{legalName}}. Nie zawiera formularzy kontaktowych, nie używa plików cookie i nie korzysta z narzędzi analitycznych ani reklamowych.",
+    "sections": [
+      {
+        "title": "Administrator danych",
+        "paragraphs": [
+          "Administratorem Twoich danych osobowych jest {{legalName}} (dane firmy podane są na dole strony). We wszystkich sprawach dotyczących prywatności napisz na adres {{email}}."
+        ]
+      },
+      {
+        "title": "Jakie dane przetwarzamy i w jakim celu",
+        "paragraphs": [
+          "Jeśli kontaktujesz się z nami telefonicznie, e-mailem lub przez WhatsApp, przetwarzamy przekazane nam dane — zwykle imię i nazwisko, nazwę firmy, dane kontaktowe i treść wiadomości — aby odpowiedzieć, przygotować ofertę i zrealizować zamówienie (art. 6 ust. 1 lit. b RODO) oraz w naszym prawnie uzasadnionym interesie, jakim jest prowadzenie korespondencji handlowej (art. 6 ust. 1 lit. f RODO)."
+        ]
+      },
+      {
+        "title": "Hosting strony",
+        "paragraphs": [
+          "Strona jest hostowana przez Cloudflare, Inc. Podczas otwierania strony Cloudflare przetwarza dane techniczne, takie jak adres IP, w logach serwera, aby dostarczyć stronę i chronić ją przed nadużyciami. Strona nie ładuje zewnętrznych czcionek, skryptów ani narzędzi śledzących."
+        ]
+      },
+      {
+        "title": "WhatsApp",
+        "paragraphs": [
+          "Jeśli piszesz do nas przez WhatsApp, wiadomość jest przetwarzana również przez WhatsApp Ireland Limited zgodnie z jego polityką prywatności."
+        ]
+      },
+      {
+        "title": "Okres przechowywania",
+        "paragraphs": [
+          "Korespondencję przechowujemy tak długo, jak jest to potrzebne do obsługi zapytania i współpracy, a następnie przez okres wymagany przepisami (np. podatkowymi i rachunkowymi) lub do ustalenia i obrony roszczeń."
+        ]
+      },
+      {
+        "title": "Twoje prawa",
+        "paragraphs": [
+          "Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, sprzeciwu wobec przetwarzania oraz przeniesienia danych. Możesz także wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO)."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "text": "Strona, której szukasz, nie istnieje.",
+    "back": "Wróć na stronę główną"
+  },
+  "productList": [
+    {
+      "slug": "inner-liner",
+      "image": "inner-liner.svg",
+      "name": "Laminaty aluminiowe (inner liner)",
+      "short": "Folia aluminiowa laminowana z papierem — wkładki barierowe do opakowań tytoniowych, cukierniczych i spożywczych.",
+      "intro": [
+        "Laminaty cienkiej folii aluminiowej i papieru stosowane jako wkładki wewnętrzne i owijki. Chronią zawartość przed wilgocią, światłem i utratą aromatu oraz pracują stabilnie na szybkich maszynach pakujących."
+      ],
+      "features": [
+        "Wysoka bariera dla wilgoci, światła i aromatu",
+        "Wykończenie srebrne, złote, tłoczone i z nadrukiem",
+        "Stabilna praca na szybkich maszynach pakujących",
+        "Bobiny cięte na wymaganą szerokość"
+      ],
+      "specs": [
+        ["Budowa", "Folia aluminiowa + papier"],
+        ["Wykończenie", "Srebrne, złote, tłoczone, nadruk na zamówienie"],
+        ["Format", "Bobiny cięte na szerokość klienta"],
+        ["Gilza", "76 mm (3\") lub na zamówienie"]
+      ]
+    },
+    {
+      "slug": "food-packaging-paper",
+      "image": "food-paper.svg",
+      "name": "Papiery do pakowania żywności",
+      "short": "Papiery tłuszczoodporne, kraft i powlekane do pakowania żywności.",
+      "intro": [
+        "Papiery do owijania i pakowania żywności: gatunki tłuszczoodporne, kraft i powlekane dla piekarni, delikatesów, gastronomii oraz producentów mięsa, ryb i wyrobów cukierniczych."
+      ],
+      "features": [
+        "Gatunki dopuszczone do kontaktu z żywnością",
+        "Warianty odporne na tłuszcz i wilgoć",
+        "Białe lub naturalne brązowe",
+        "Rolki lub arkusze cięte na wymiar"
+      ],
+      "specs": [
+        ["Gatunki", "Tłuszczoodporny, kraft, powlekany"],
+        ["Gramatura", "30–80 g/m² (typowo)"],
+        ["Format", "Rolki lub arkusze"],
+        ["Dokumenty", "Deklaracje do kontaktu z żywnością na życzenie"]
+      ]
+    },
+    {
+      "slug": "wrapping-paper",
+      "image": "wrapping.svg",
+      "name": "Dekoracyjne papiery do pakowania",
+      "short": "Kolorowe papiery kraft do kwiatów, prezentów i handlu.",
+      "intro": [
+        "Dekoracyjne papiery kraft dla kwiaciarni, do pakowania prezentów i ekspozycji w handlu. Łączą atrakcyjne kolory z dobrą wytrzymałością i elastycznością, dzięki czemu łatwo się nimi pakuje, a opakowanie wygląda estetycznie."
+      ],
+      "features": [
+        "Szeroka gama kolorów",
+        "Powierzchnia gładka lub prążkowana",
+        "Dobra wytrzymałość i elastyczność",
+        "Nadają się do recyklingu"
+      ],
+      "specs": [
+        ["Materiał", "Kolorowy papier kraft, gładki lub prążkowany"],
+        ["Kolory", "Szeroka gama, wzornik na życzenie"],
+        ["Format", "Rolki lub arkusze"],
+        ["Zastosowanie", "Kwiaty, prezenty, opakowania w handlu"]
+      ]
+    },
+    {
+      "slug": "polypropylene-film",
+      "image": "pp-film.svg",
+      "name": "Folia polipropylenowa w rolach",
+      "short": "Folia PP / BOPP w rolach: przezroczysta, biała lub metalizowana.",
+      "intro": [
+        "Folia polipropylenowa w rolach do owijania, laminacji, etykiet i produkcji torebek. Wersje przezroczyste, białe, matowe i metalizowane w szerokościach dopasowanych do Twoich maszyn."
+      ],
+      "features": [
+        "Przezroczysta, biała, matowa lub metalizowana",
+        "Dobra przejrzystość i sztywność",
+        "Bariera dla wilgoci",
+        "Role cięte na wymaganą szerokość"
+      ],
+      "specs": [
+        ["Materiał", "PP / BOPP"],
+        ["Rodzaje", "Przezroczysta, biała, matowa, metalizowana"],
+        ["Grubość", "15–50 µm (typowo)"],
+        ["Format", "Role cięte na szerokość klienta"]
+      ]
+    },
+    {
+      "slug": "plotter-rolls",
+      "image": "plotter.svg",
+      "name": "Rolki do ploterów i kopiarek",
+      "short": "Białe niepowlekane rolki papieru do ploterów, CAD i kopiarek.",
+      "intro": [
+        "Rolki z białego, niepowlekanego papieru do ploterów wielkoformatowych, wydruków CAD i kopiarek inżynieryjnych, do urządzeń atramentowych i laserowych."
+      ],
+      "features": [
+        "Wysoka biel, papier niepowlekany",
+        "Standardowe szerokości ISO i calowe",
+        "Wersje do ploterów i kopiarek inżynieryjnych",
+        "Równe, czyste nawinięcie"
+      ],
+      "specs": [
+        ["Gramatura", "80 i 90 g/m²"],
+        ["Szerokość", "297–1118 mm"],
+        ["Rolki do ploterów", "Gilza 50,8 mm (2\"), 40–50 m"],
+        ["Rolki do kopiarek", "Gilza 76,2 mm (3\"), 150–175 m"]
+      ]
+    },
+    {
+      "slug": "adhesives",
+      "image": "adhesive.svg",
+      "name": "Kleje w kanistrach 22 kg",
+      "short": "Kleje przemysłowe do opakowań i przetwórstwa papieru.",
+      "intro": [
+        "Kleje przemysłowe do zamykania kartonów, etykietowania, laminacji i przetwórstwa papieru, dostarczane w wygodnych kanistrach 22 kg."
+      ],
+      "features": [
+        "Kanistry 22 kg",
+        "Klej dobrany do zastosowania i maszyny",
+        "Pojedyncze kanistry lub pełne palety",
+        "Karty techniczne i karty charakterystyki na życzenie"
+      ],
+      "specs": [
+        ["Opakowanie", "Kanister 22 kg"],
+        ["Zastosowanie", "Zamykanie kartonów, etykietowanie, laminacja, przetwórstwo papieru"],
+        ["Dostawa", "Pojedyncze kanistry lub pełne palety"],
+        ["Dokumenty", "TDS / SDS na życzenie"]
+      ]
+    }
+  ]
+}
